@@ -123,6 +123,7 @@ class FunkinLua {
 		set('framerate', ClientPrefs.framerate);
 		set('ghostTapping', ClientPrefs.ghostTapping);
 		set('hideHud', ClientPrefs.hideHud);
+		set('bigArrows', ClientPrefs.bigArrows);
 		set('rowColors', ClientPrefs.rowColors);
 		set('hideTime', ClientPrefs.hideTime);
 		set('cameraZoomOnBeat', ClientPrefs.camZooms);

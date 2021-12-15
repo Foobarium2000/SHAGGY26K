@@ -31,16 +31,17 @@ class Note extends FlxSprite
 
 	public var colorSwap:ColorSwap;
 	public var inEditor:Bool = false;
-
-	public static var scales:Array<Float> = [0.7, 0.6, 0.55, 0.46, 0.40, 0.23];
-	public static var swidths:Array<Float> = [160, 120, 110, 90, 60, 31];
-	public static var posRest:Array<Int> = [0, 35, 50, 70, 70, 70];
+	public static var scales:Array<Float> = [0.7, 0.6, 0.55, 0.46, 0.40, 0.23, 0.7];
+	public static var swidths:Array<Float> = [160, 120, 110, 90, 60, 31, 160];
+	public static var posRest:Array<Int> = [0, 35, 50, 70, 70, 70, 70];
 
 	public static var swagWidth:Float = 0.7;
 	public static var PURP_NOTE:Int = 0;
 	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
+
+	public var dType:Int = 0;
 
 	private function set_noteType(value:Int):Int {
 		if(noteData > -1 && noteType != value) {
@@ -64,10 +65,22 @@ class Note extends FlxSprite
 	var isPixel:Bool = false;
 	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false)
 	{
-		super();
+		super();	
 		
 		var mania = PlayState.SONG.mania;
 
+		if (ClientPrefs.bigArrows && ClientPrefs.middleScroll)
+		{	
+			scales = [0.7, 0.6, 0.55, 0.46, 0.40, 0.46, 0.34, 0.7];
+			swidths = [160, 120, 110, 90, 60, 69, 52, 160];
+			posRest = [0, 35, 50, 70, 70, 415, 70, 70];
+		}
+		else
+		{
+			scales = [0.7, 0.6, 0.55, 0.46, 0.40, 0.23, 0.34, 0.7];
+			swidths = [160, 120, 110, 90, 60, 31, 52, 160];
+			posRest = [0, 35, 50, 70, 70, 70, 70, 70];
+		}	
 		if (prevNote == null)
 			prevNote = this;
 

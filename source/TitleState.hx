@@ -386,6 +386,8 @@ class TitleState extends MusicBeatState
 					addMoreText('SandPlanet', -50);
 					addMoreText('Saruky', -50);
 					addMoreText('Joan Atlas', -50);
+					addMoreText('Hydrenaline', -50);
+					addMoreText('Flavio_109', -50);
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
 				case 4:
@@ -423,7 +425,7 @@ class TitleState extends MusicBeatState
 					addMoreText('Funkin');
 
 				case 15:
-					addMoreText('Vs Shaggy');
+					addMoreText('Vs Shaggy 13+ Key');
 
 				case 16:
 					skipIntro();

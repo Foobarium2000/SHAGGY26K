@@ -220,6 +220,57 @@ enum abstract Action(String) to String from String
 	var F23_R = "f23-release";
 	var F24_R = "f24-release";
 	var F25_R = "f25-release";
+
+	var G0 = "g0";
+	var G1 = "g1";
+	var G2 = "g2";
+	var G3 = "g3";
+	var G4 = "g4";
+	var G5 = "g5";
+	var G6 = "g6";
+	var G7 = "g7";
+	var G8 = "g8";
+	var G9 = "g9";
+	var G10 = "g10";
+	var G11 = "g11";
+	var G12 = "g12";
+	var G13 = "g13";
+	var G14 = "g14";
+	var G15 = "g15";
+
+	var G0_P = "g0-press";
+	var G1_P = "g1-press";
+	var G2_P = "g2-press";
+	var G3_P = "g3-press";
+	var G4_P = "g4-press";
+	var G5_P = "g5-press";
+	var G6_P = "g6-press";
+	var G7_P = "g7-press";
+	var G8_P = "g8-press";
+	var G9_P = "g9-press";
+	var G10_P = "g10-press";
+	var G11_P = "g11-press";
+	var G12_P = "g12-press";
+	var G13_P = "g13-press";
+	var G14_P = "g14-press";
+	var G15_P = "g15-press";
+
+	var G0_R = "g0-release";
+	var G1_R = "g1-release";
+	var G2_R = "g2-release";
+	var G3_R = "g3-release";
+	var G4_R = "g4-release";
+	var G5_R = "g5-release";
+	var G6_R = "g6-release";
+	var G7_R = "g7-release";
+	var G8_R = "g8-release";
+	var G9_R = "g9-release";
+	var G10_R = "g10-release";
+	var G11_R = "g11-release";
+	var G12_R = "g12-release";
+	var G13_R = "g13-release";
+	var G14_R = "g14-release";
+	var G15_R = "g15-release";
 }
 #else
 @:enum
@@ -430,7 +481,58 @@ abstract Action(String) to String from String
 	var F22_R = "f22-release";
 	var F23_R = "f23-release";
 	var F24_R = "f24-release";
-	var F25_R = "f25-release";	
+	var F25_R = "f25-release";
+	
+	var G0 = "g0";
+	var G1 = "g1";
+	var G2 = "g2";
+	var G3 = "g3";
+	var G4 = "g4";
+	var G5 = "g5";
+	var G6 = "g6";
+	var G7 = "g7";
+	var G8 = "g8";
+	var G9 = "g9";
+	var G10 = "g10";
+	var G11 = "g11";
+	var G12 = "g12";
+	var G13 = "g13";
+	var G14 = "g14";
+	var G15 = "g15";
+
+	var G0_P = "g0-press";
+	var G1_P = "g1-press";
+	var G2_P = "g2-press";
+	var G3_P = "g3-press";
+	var G4_P = "g4-press";
+	var G5_P = "g5-press";
+	var G6_P = "g6-press";
+	var G7_P = "g7-press";
+	var G8_P = "g8-press";
+	var G9_P = "g9-press";
+	var G10_P = "g10-press";
+	var G11_P = "g11-press";
+	var G12_P = "g12-press";
+	var G13_P = "g13-press";
+	var G14_P = "g14-press";
+	var G15_P = "g15-press";
+
+	var G0_R = "g0-release";
+	var G1_R = "g1-release";
+	var G2_R = "g2-release";
+	var G3_R = "g3-release";
+	var G4_R = "g4-release";
+	var G5_R = "g5-release";
+	var G6_R = "g6-release";
+	var G7_R = "g7-release";
+	var G8_R = "g8-release";
+	var G9_R = "g9-release";
+	var G10_R = "g10-release";
+	var G11_R = "g11-release";
+	var G12_R = "g12-release";
+	var G13_R = "g13-release";
+	var G14_R = "g14-release";
+	var G15_R = "g15-release";
 }
 #end
 
@@ -518,6 +620,23 @@ enum Control
 	F23;
 	F24;
 	F25;
+
+	G0;
+	G1;
+	G2;
+	G3;
+	G4;
+	G5;
+	G6;
+	G7;
+	G8;
+	G9;
+	G10;
+	G11;
+	G12;
+	G13;
+	G14;
+	G15;
 }
 
 enum KeyboardScheme
@@ -740,6 +859,57 @@ class Controls extends FlxActionSet
 	var _f23R = new FlxActionDigital(Action.F23_R);
 	var _f24R = new FlxActionDigital(Action.F24_R);
 	var _f25R = new FlxActionDigital(Action.F25_R);
+
+	var _g0 = new FlxActionDigital(Action.G0);
+	var _g1 = new FlxActionDigital(Action.G1);
+	var _g2 = new FlxActionDigital(Action.G2);
+	var _g3 = new FlxActionDigital(Action.G3);
+	var _g4 = new FlxActionDigital(Action.G4);
+	var _g5 = new FlxActionDigital(Action.G5);
+	var _g6 = new FlxActionDigital(Action.G6);
+	var _g7 = new FlxActionDigital(Action.G7);
+	var _g8 = new FlxActionDigital(Action.G8);
+	var _g9 = new FlxActionDigital(Action.G9);
+	var _g10 = new FlxActionDigital(Action.G10);
+	var _g11 = new FlxActionDigital(Action.G11);
+	var _g12 = new FlxActionDigital(Action.G12);
+	var _g13 = new FlxActionDigital(Action.G13);
+	var _g14 = new FlxActionDigital(Action.G14);
+	var _g15 = new FlxActionDigital(Action.G15);
+
+	var _g0P = new FlxActionDigital(Action.G0_P);
+	var _g1P = new FlxActionDigital(Action.G1_P);
+	var _g2P = new FlxActionDigital(Action.G2_P);
+	var _g3P = new FlxActionDigital(Action.G3_P);
+	var _g4P = new FlxActionDigital(Action.G4_P);
+	var _g5P = new FlxActionDigital(Action.G5_P);
+	var _g6P = new FlxActionDigital(Action.G6_P);
+	var _g7P = new FlxActionDigital(Action.G7_P);
+	var _g8P = new FlxActionDigital(Action.G8_P);
+	var _g9P = new FlxActionDigital(Action.G9_P);
+	var _g10P = new FlxActionDigital(Action.G10_P);
+	var _g11P = new FlxActionDigital(Action.G11_P);
+	var _g12P = new FlxActionDigital(Action.G12_P);
+	var _g13P = new FlxActionDigital(Action.G13_P);
+	var _g14P = new FlxActionDigital(Action.G14_P);
+	var _g15P = new FlxActionDigital(Action.G15_P);
+
+	var _g0R = new FlxActionDigital(Action.G0_R);
+	var _g1R = new FlxActionDigital(Action.G1_R);
+	var _g2R = new FlxActionDigital(Action.G2_R);
+	var _g3R = new FlxActionDigital(Action.G3_R);
+	var _g4R = new FlxActionDigital(Action.G4_R);
+	var _g5R = new FlxActionDigital(Action.G5_R);
+	var _g6R = new FlxActionDigital(Action.G6_R);
+	var _g7R = new FlxActionDigital(Action.G7_R);
+	var _g8R = new FlxActionDigital(Action.G8_R);
+	var _g9R = new FlxActionDigital(Action.G9_R);
+	var _g10R = new FlxActionDigital(Action.G10_R);
+	var _g11R = new FlxActionDigital(Action.G11_R);
+	var _g12R = new FlxActionDigital(Action.G12_R);
+	var _g13R = new FlxActionDigital(Action.G13_R);
+	var _g14R = new FlxActionDigital(Action.G14_R);
+	var _g15R = new FlxActionDigital(Action.G15_R);
 
 
 	#if (haxe >= "4.0.0")
@@ -1069,6 +1239,57 @@ class Controls extends FlxActionSet
 	public var F24_R(get, never):Bool; inline function get_F24_R() {return _f24R.check();}
 	public var F25_R(get, never):Bool; inline function get_F25_R() {return _f25R.check();}
 
+	public var G0(get, never):Bool; inline function get_G0() {return _g0.check();}
+	public var G1(get, never):Bool; inline function get_G1() {return _g1.check();}
+	public var G2(get, never):Bool; inline function get_G2() {return _g2.check();}
+	public var G3(get, never):Bool; inline function get_G3() {return _g3.check();}
+	public var G4(get, never):Bool; inline function get_G4() {return _g4.check();}
+	public var G5(get, never):Bool; inline function get_G5() {return _g5.check();}
+	public var G6(get, never):Bool; inline function get_G6() {return _g6.check();}
+	public var G7(get, never):Bool; inline function get_G7() {return _g7.check();}
+	public var G8(get, never):Bool; inline function get_G8() {return _g8.check();}
+	public var G9(get, never):Bool; inline function get_G9() {return _g9.check();}
+	public var G10(get, never):Bool; inline function get_G10() {return _g10.check();}
+	public var G11(get, never):Bool; inline function get_G11() {return _g11.check();}
+	public var G12(get, never):Bool; inline function get_G12() {return _g12.check();}
+	public var G13(get, never):Bool; inline function get_G13() {return _g13.check();}
+	public var G14(get, never):Bool; inline function get_G14() {return _g14.check();}
+	public var G15(get, never):Bool; inline function get_G15() {return _g15.check();}
+
+	public var G0_P(get, never):Bool; inline function get_G0_P() {return _g0P.check();}
+	public var G1_P(get, never):Bool; inline function get_G1_P() {return _g1P.check();}
+	public var G2_P(get, never):Bool; inline function get_G2_P() {return _g2P.check();}
+	public var G3_P(get, never):Bool; inline function get_G3_P() {return _g3P.check();}
+	public var G4_P(get, never):Bool; inline function get_G4_P() {return _g4P.check();}
+	public var G5_P(get, never):Bool; inline function get_G5_P() {return _g5P.check();}
+	public var G6_P(get, never):Bool; inline function get_G6_P() {return _g6P.check();}
+	public var G7_P(get, never):Bool; inline function get_G7_P() {return _g7P.check();}
+	public var G8_P(get, never):Bool; inline function get_G8_P() {return _g8P.check();}
+	public var G9_P(get, never):Bool; inline function get_G9_P() {return _g9P.check();}
+	public var G10_P(get, never):Bool; inline function get_G10_P() {return _g10P.check();}
+	public var G11_P(get, never):Bool; inline function get_G11_P() {return _g11P.check();}
+	public var G12_P(get, never):Bool; inline function get_G12_P() {return _g12P.check();}
+	public var G13_P(get, never):Bool; inline function get_G13_P() {return _g13P.check();}
+	public var G14_P(get, never):Bool; inline function get_G14_P() {return _g14P.check();}
+	public var G15_P(get, never):Bool; inline function get_G15_P() {return _g15P.check();}
+
+	public var G0_R(get, never):Bool; inline function get_G0_R() {return _g0R.check();}
+	public var G1_R(get, never):Bool; inline function get_G1_R() {return _g1R.check();}
+	public var G2_R(get, never):Bool; inline function get_G2_R() {return _g2R.check();}
+	public var G3_R(get, never):Bool; inline function get_G3_R() {return _g3R.check();}
+	public var G4_R(get, never):Bool; inline function get_G4_R() {return _g4R.check();}
+	public var G5_R(get, never):Bool; inline function get_G5_R() {return _g5R.check();}
+	public var G6_R(get, never):Bool; inline function get_G6_R() {return _g6R.check();}
+	public var G7_R(get, never):Bool; inline function get_G7_R() {return _g7R.check();}
+	public var G8_R(get, never):Bool; inline function get_G8_R() {return _g8R.check();}
+	public var G9_R(get, never):Bool; inline function get_G9_R() {return _g9R.check();}
+	public var G10_R(get, never):Bool; inline function get_G10_R() {return _g10R.check();}
+	public var G11_R(get, never):Bool; inline function get_G11_R() {return _g11R.check();}
+	public var G12_R(get, never):Bool; inline function get_G12_R() {return _g12R.check();}
+	public var G13_R(get, never):Bool; inline function get_G13_R() {return _g13R.check();}
+	public var G14_R(get, never):Bool; inline function get_G14_R() {return _g14R.check();}
+	public var G15_R(get, never):Bool; inline function get_G15_R() {return _g15R.check();}
+
 	#if (haxe >= "4.0.0")
 	public function new(name, scheme = None)
 	{
@@ -1278,6 +1499,58 @@ class Controls extends FlxActionSet
 		add(_f24R);
 		add(_f25R);
 
+		add(_g0);
+		add(_g1);
+		add(_g2);
+		add(_g3);
+		add(_g4);
+		add(_g5);
+		add(_g6);
+		add(_g7);
+		add(_g8);
+		add(_g9);
+		add(_g10);
+		add(_g11);
+		add(_g12);
+		add(_g13);
+		add(_g14);
+		add(_g15);
+
+		add(_g0P);
+		add(_g1P);
+		add(_g2P);
+		add(_g3P);
+		add(_g4P);
+		add(_g5P);
+		add(_g6P);
+		add(_g7P);
+		add(_g8P);
+		add(_g9P);
+		add(_g10P);
+		add(_g11P);
+		add(_g12P);
+		add(_g13P);
+		add(_g14P);
+		add(_g15P);
+
+		add(_g0R);
+		add(_g1R);
+		add(_g2R);
+		add(_g3R);
+		add(_g4R);
+		add(_g5R);
+		add(_g6R);
+		add(_g7R);
+		add(_g8R);
+		add(_g9R);
+		add(_g10R);
+		add(_g11R);
+		add(_g12R);
+		add(_g13R);
+		add(_g14R);
+		add(_g15R);
+
+
 		for (action in digitalActions)
 			byName[action.name] = action;
 
@@ -1453,6 +1726,57 @@ class Controls extends FlxActionSet
 		add(_f24R);
 		add(_f25R);
 
+		add(_g0);
+		add(_g1);
+		add(_g2);
+		add(_g3);
+		add(_g4);
+		add(_g5);
+		add(_g6);
+		add(_g7);
+		add(_g8);
+		add(_g9);
+		add(_g10);
+		add(_g11);
+		add(_g12);
+		add(_g13);
+		add(_g14);
+		add(_g15);
+
+		add(_g0P);
+		add(_g1P);
+		add(_g2P);
+		add(_g3P);
+		add(_g4P);
+		add(_g5P);
+		add(_g6P);
+		add(_g7P);
+		add(_g8P);
+		add(_g9P);
+		add(_g10P);
+		add(_g11P);
+		add(_g12P);
+		add(_g13P);
+		add(_g14P);
+		add(_g15P);
+
+		add(_g0R);
+		add(_g1R);
+		add(_g2R);
+		add(_g3R);
+		add(_g4R);
+		add(_g5R);
+		add(_g6R);
+		add(_g7R);
+		add(_g8R);
+		add(_g9R);
+		add(_g10R);
+		add(_g11R);
+		add(_g12R);
+		add(_g13R);
+		add(_g14R);
+		add(_g15R);
+
 		for (action in digitalActions)
 			byName[action.name] = action;
 			
@@ -1569,6 +1893,23 @@ class Controls extends FlxActionSet
 			case F23: _f23;
 			case F24: _f24;
 			case F25: _f25;
+
+			case G0: _g0;
+			case G1: _g1;
+			case G2: _g2;
+			case G3: _g3;
+			case G4: _g4;
+			case G5: _g5;
+			case G6: _g6;
+			case G7: _g7;
+			case G8: _g8;
+			case G9: _g9;
+			case G10: _g10;
+			case G11: _g11;
+			case G12: _g12;
+			case G13: _g13;
+			case G14: _g14;
+			case G15: _g15;
 		}
 	}
 
@@ -1853,7 +2194,72 @@ class Controls extends FlxActionSet
 			case F25:
 				func(_f25, PRESSED);
 				func(_f25P, JUST_PRESSED);
-				func(_f25R, JUST_RELEASED);				
+				func(_f25R, JUST_RELEASED);
+			
+			case G0:
+				func(_g0, PRESSED);
+				func(_g0P, JUST_PRESSED);
+				func(_g0R, JUST_RELEASED);
+			case G1:
+				func(_g1, PRESSED);
+				func(_g1P, JUST_PRESSED);
+				func(_g1R, JUST_RELEASED);
+			case G2:
+				func(_g2, PRESSED);
+				func(_g2P, JUST_PRESSED);
+				func(_g2R, JUST_RELEASED);
+			case G3:
+				func(_g3, PRESSED);
+				func(_g3P, JUST_PRESSED);
+				func(_g3R, JUST_RELEASED);
+			case G4:
+				func(_g4, PRESSED);
+				func(_g4P, JUST_PRESSED);
+				func(_g4R, JUST_RELEASED);
+			case G5:
+				func(_g5, PRESSED);
+				func(_g5P, JUST_PRESSED);
+				func(_g5R, JUST_RELEASED);
+			case G6:
+				func(_g6, PRESSED);
+				func(_g6P, JUST_PRESSED);
+				func(_g6R, JUST_RELEASED);
+			case G7:
+				func(_g7, PRESSED);
+				func(_g7P, JUST_PRESSED);
+				func(_g7R, JUST_RELEASED);
+			case G8:
+				func(_g8, PRESSED);
+				func(_g8P, JUST_PRESSED);
+				func(_g8R, JUST_RELEASED);
+			case G9:
+				func(_g9, PRESSED);
+				func(_g9P, JUST_PRESSED);
+				func(_g9R, JUST_RELEASED);
+			case G10:
+				func(_g10, PRESSED);
+				func(_g10P, JUST_PRESSED);
+				func(_g10R, JUST_RELEASED);
+			case G11:
+				func(_g11, PRESSED);
+				func(_g11P, JUST_PRESSED);
+				func(_g11R, JUST_RELEASED);
+			case G12:
+				func(_g12, PRESSED);
+				func(_g12P, JUST_PRESSED);
+				func(_g12R, JUST_RELEASED);
+			case G13:
+				func(_g13, PRESSED);
+				func(_g13P, JUST_PRESSED);
+				func(_g13R, JUST_RELEASED);
+			case G14:
+				func(_g14, PRESSED);
+				func(_g14P, JUST_PRESSED);
+				func(_g14R, JUST_RELEASED);
+			case G15:
+				func(_g15, PRESSED);
+				func(_g15P, JUST_PRESSED);
+				func(_g15R, JUST_RELEASED);
 		}
 	}
 

@@ -66,7 +66,7 @@ class FreeplayState extends MusicBeatState
 
 			if (songArray[0] != 'Talladega' || FlxG.save.data.ending[2]) //this is a fucking bullshit condition but whatever
 			{
-				addSong(songArray[0], 0, songArray[1]);
+				addSong(songArray[0], 0, songArray[1], songArray[3]);
 				songs[songs.length-1].color = Std.parseInt(songArray[2]);
 			}
 		}
@@ -112,7 +112,7 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
+			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName + " (" + songs[i].keyCount + ") ", true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
@@ -186,12 +186,12 @@ class FreeplayState extends MusicBeatState
 		super.closeSubState();
 	}
 
-	public function addSong(songName:String, weekNum:Int, songCharacter:String)
+	public function addSong(songName:String, weekNum:Int, songCharacter:String, keyCount:String)
 	{
-		songs.push(new SongMetadata(songName, weekNum, songCharacter));
+		songs.push(new SongMetadata(songName, weekNum, songCharacter, keyCount));
 	}
 
-	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
+	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>, ?keyCount:String = '4K')
 	{
 		if (songCharacters == null)
 			songCharacters = ['bf'];
@@ -199,7 +199,7 @@ class FreeplayState extends MusicBeatState
 		var num:Int = 0;
 		for (song in songs)
 		{
-			addSong(song, weekNum, songCharacters[num]);
+			addSong(song, weekNum, songCharacters[num], keyCount);
 
 			if (songCharacters.length != 1)
 				num++;
@@ -245,12 +245,18 @@ class FreeplayState extends MusicBeatState
 		if (controls.UI_RIGHT_P)
 			changeDiff(1);
 
+		if (FlxG.keys.justPressed.SEVEN)
+			{
+				FlxG.sound.music.pause();
+				FlxG.sound.play(Paths.sound('scob'), 0.4);
+			}
+
 		if (controls.BACK)
 		{
 			if(colorTween != null) {
 				colorTween.cancel();
 			}
-			MusicBeatState.switchState(new MainMenuState());
+			MusicBeatState.switchState(new FreeplayChoice());
 		}
 
 		#if PRELOAD_ALL
@@ -406,13 +412,15 @@ class SongMetadata
 	public var songName:String = "";
 	public var week:Int = 0;
 	public var songCharacter:String = "";
+	public var keyCount:String = "";
 	public var color:Int = -7179779;
 
-	public function new(song:String, week:Int, songCharacter:String)
+	public function new(song:String, week:Int, songCharacter:String, keyCount:String)
 	{
 		this.songName = song;
 		this.week = week;
 		this.songCharacter = songCharacter;
+		this.keyCount = keyCount;
 		if(week < FreeplayState.coolColors.length) {
 			this.color = FreeplayState.coolColors[week];
 		}

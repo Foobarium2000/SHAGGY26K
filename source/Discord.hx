@@ -39,7 +39,7 @@ class DiscordClient
 			details: "In the Menus",
 			state: null,
 			largeImageKey: 'icon',
-			largeImageText: "Psych Engine (13K/26K)"
+			largeImageText: "Psych Engine (13K+)"
 		});
 	}
 
@@ -75,7 +75,7 @@ class DiscordClient
 			details: details,
 			state: state,
 			largeImageKey: 'icon',
-			largeImageText: "Engine Version: " + MainMenuState.psychEngineVersion + " (13K/26K)",
+			largeImageText: "Engine Version: " + MainMenuState.psychEngineVersion + " (13K+)",
 			smallImageKey : smallImageKey,
 			// Obtained times are in milliseconds so they are divided so Discord can use it
 			startTimestamp : Std.int(startTimestamp / 1000),

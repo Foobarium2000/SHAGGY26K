@@ -38,10 +38,6 @@ class TSSave extends MusicBeatState
 	private var grpInputs:Array<AttachedText> = [];
 	public static var menuBG:FlxSprite;
 
-	var lanText:FlxText;
-	var resetScreen:FlxSprite;
-    var resetText:FlxText;
-
 	private static var curAlt:Bool = false;
 	
 	var nextAccept:Int = 5;
@@ -49,12 +45,6 @@ class TSSave extends MusicBeatState
 	override function create() {
 
 		super.create();
-	}
-
-	function updateLanText()
-	{
-		lanText.text = TextData.getLanAtt()[0];
-		lanText.screenCenter(X);
 	}
 
 	override function closeSubState() {

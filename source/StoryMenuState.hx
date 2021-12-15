@@ -381,8 +381,6 @@ class StoryMenuState extends MusicBeatState
 		{
 			switch (curWeek)
 			{
-				case 3:
-					CoolUtil.browserLoad('https://gamejolt.com/games/fnf-shaggy-matt/648032');
 				case 6:
 					MusicBeatState.switchState(new MASKstate());
 				default:

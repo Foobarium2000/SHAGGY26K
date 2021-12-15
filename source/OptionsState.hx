@@ -511,6 +511,23 @@ class ControlsSubstate extends MusicBeatSubstate {
 		ClientPrefs.keyBinds[38][1],
 		ClientPrefs.keyBinds[39][1],
 		ClientPrefs.keyBinds[40][1],
+		'16 KEY',
+		ClientPrefs.keyBinds[41][1],
+		ClientPrefs.keyBinds[42][1],
+		ClientPrefs.keyBinds[43][1],
+		ClientPrefs.keyBinds[44][1],
+		ClientPrefs.keyBinds[45][1],
+		ClientPrefs.keyBinds[46][1],
+		ClientPrefs.keyBinds[47][1],
+		ClientPrefs.keyBinds[48][1],
+		ClientPrefs.keyBinds[49][1],
+		ClientPrefs.keyBinds[50][1],
+		ClientPrefs.keyBinds[51][1],
+		ClientPrefs.keyBinds[52][1],
+		ClientPrefs.keyBinds[53][1],
+		ClientPrefs.keyBinds[54][1],
+		ClientPrefs.keyBinds[55][1],
+		ClientPrefs.keyBinds[56][1],
 		'',
 		defaultKey];
 
@@ -1008,6 +1025,7 @@ class PreferencesSubstate extends MusicBeatSubstate
 		'Ghost Tapping',
 		'Note Delay',
 		'Hide HUD',
+		'Big Arrows',
 		'Hide Song Length',
 		'Flashing Lights',
 		'Camera Zooms'
@@ -1188,6 +1206,9 @@ class PreferencesSubstate extends MusicBeatSubstate
 					case 'Hide HUD':
 						ClientPrefs.hideHud = !ClientPrefs.hideHud;
 
+					case 'Big Arrows':
+						ClientPrefs.bigArrows = !ClientPrefs.bigArrows;
+
 					case 'Persistent Cached Data':
 						ClientPrefs.imagesPersist = !ClientPrefs.imagesPersist;
 						FlxGraphic.defaultPersist = ClientPrefs.imagesPersist;
@@ -1285,6 +1306,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 				daText = "If unchecked, the camera won't zoom in on a beat hit.";
 			case 'Hide HUD':
 				daText = "If checked, hides most HUD elements.";
+			case 'Big Arrows':
+				daText = "Makes 26K more easier to read. Only activates when on Middlescroll";
 			case 'Hide Song Length':
 				daText = "If checked, the bar showing how much time is left\nwill be hidden.";
 		}
@@ -1366,6 +1389,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 						daValue = ClientPrefs.camZooms;
 					case 'Hide HUD':
 						daValue = ClientPrefs.hideHud;
+					case 'Big Arrows':
+						daValue = ClientPrefs.bigArrows;
 					case 'Persistent Cached Data':
 						daValue = ClientPrefs.imagesPersist;
 					case 'Hide Song Length':

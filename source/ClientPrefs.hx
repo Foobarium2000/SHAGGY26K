@@ -20,6 +20,7 @@ class ClientPrefs {
 	public static var violence:Bool = true;
 	public static var camZooms:Bool = true;
 	public static var hideHud:Bool = false;
+	public static var bigArrows:Bool = false;
 	public static var rowColors:Bool = false;
 	public static var bindQWERTY:Bool = true;
 	public static var bindDVORAK:Bool = false;
@@ -78,6 +79,23 @@ class ClientPrefs {
 		O, NONE,
 		P, NONE,
 		LBRACKET, NONE,
+
+		Q, NONE,
+		W, NONE,
+		E, NONE,
+		R, NONE,
+		U, NONE,
+		I, NONE,
+		O, NONE,
+		P, NONE,
+		A, NONE,
+		S, NONE,
+		D, NONE,
+		F, NONE,
+		J, NONE,
+		K, NONE,
+		L, NONE,
+		SEMICOLON, NONE
 
 		// Q, NONE,
 		// W, NONE,
@@ -156,6 +174,23 @@ class ClientPrefs {
 		[Control.C11, 'Dark '],
 		[Control.C12, 'Carmine '],
 
+		[Control.G0, 'Key 1 '],
+		[Control.G1, 'Key 2 '],
+		[Control.G2, 'Key 3 '],
+		[Control.G3, 'Key 4 '],
+		[Control.G4, 'Key 5 '],
+		[Control.G5, 'Key 6 '],
+		[Control.G6, 'Key 7 '],
+		[Control.G7, 'Key 8 '],
+		[Control.G8, 'Key 9 '],
+		[Control.G9, 'Key 10 '],
+		[Control.G10, 'Key 11 '],
+		[Control.G11, 'Key 12 '],
+		[Control.G12, 'Key 13 '],
+		[Control.G13, 'Key 14 '],
+		[Control.G14, 'Key 15 '],
+		[Control.G15, 'Key 16 '],
+
 		[Control.F0, 'Key 1 '],
 		[Control.F1, 'Key 2 '],
 		[Control.F2, 'Key 3 '],
@@ -181,7 +216,7 @@ class ClientPrefs {
 		[Control.F22, 'Key 23 '],
 		[Control.F23, 'Key 24 '],
 		[Control.F24, 'Key 25 '],
-		[Control.F25, 'Key 26 ']
+		[Control.F25, 'Key 26 '],
 	];
 	public static var lastControls:Array<FlxKey> = defaultKeys.copy();
 
@@ -199,6 +234,7 @@ class ClientPrefs {
 		FlxG.save.data.camZooms = camZooms;
 		FlxG.save.data.noteOffset = noteOffset;
 		FlxG.save.data.hideHud = hideHud;
+		FlxG.save.data.bigArrows = bigArrows;
 		FlxG.save.data.rowColors = rowColors;
 		FlxG.save.data.bindQWERTY = bindQWERTY;
 		FlxG.save.data.bindDVORAK = bindDVORAK;
@@ -272,6 +308,9 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.hideHud != null) {
 			hideHud = FlxG.save.data.hideHud;
+		}
+		if(FlxG.save.data.bigArrows != null) {
+			bigArrows = FlxG.save.data.bigArrows;
 		}
 		if(FlxG.save.data.rowColors != null) {
 			rowColors = FlxG.save.data.rowColors;

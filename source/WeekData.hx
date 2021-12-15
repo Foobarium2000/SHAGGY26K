@@ -8,7 +8,7 @@ class WeekData {
 		['Where-are-you', 'Eruption', 'Kaio-ken'],
 		['Whats-new', 'Blast', 'Super-saiyan'],
 		['GOD-EATER'],
-		['Press to download!'],
+		['Power-Link', 'Revenge', 'Final-Destination'],
 		['Soothing-power', 'Thunderstorm', 'Dissasembler'],
 		['Astral-calamity'],
 		['']
@@ -18,7 +18,7 @@ class WeekData {
 		['Kaio-ken'],
 		['Blast', 'Super-saiyan'],
 		['GOD-EATER'],
-		['Press to download!'],
+		[''],
 		['Thunderstorm', 'Dissasembler'],
 		[''],
 		[' ']
@@ -32,6 +32,9 @@ class WeekData {
 		'Blast' => true,
 		'Super-saiyan' => true,
 		'GOD-EATER' => true,
+		'Power-Link' => false,
+		'Revenge' => false,
+		'Final-Destination' => false,
 		'Soothing-power' => false,
 		'Thunderstorm' => true,
 		'Dissasembler' => true,

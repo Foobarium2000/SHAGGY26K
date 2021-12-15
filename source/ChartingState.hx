@@ -70,10 +70,13 @@ class ChartingState extends MusicBeatState
 		['Change Character', "Value 1: Character to change\nValue 2: New character's name\n\nOn Value 1, Boyfriend is 0,\nDad is 1 and Girlfriend is 2"],
 		['Shaggy trail alpha', "Value 1: alpha xdxdddxd\n(0 = visible, 1 = invisible)"],
 		['Shaggy burst', "Value 1: nothing"],
+		['Boyfriend burst', "Value 1: nothing"],
 		['Camera rotate on', "1: Speed multiplier\n2: Range"],
 		['Camera rotate off', ""],
 		['Toggle bg dim', ""],
-		['Drop eye', "to whoever is editing this chart:\ndon't use this anywhere."]
+		['Drop eye', "to whoever is editing this chart:\ndon't use this anywhere."],
+		['Nonsense death', "ONLY FOR USE WITH THE NONSENSE CHART"],
+		['BF hit', "BF will become hit"]
 	];
 
 	var _file:FileReference;
@@ -395,7 +398,7 @@ class ChartingState extends MusicBeatState
 		stepperBPM.value = Conductor.bpm;
 		stepperBPM.name = 'song_bpm';
 
-		var stepperMania:FlxUINumericStepper = new FlxUINumericStepper(100, 70, 1, 0, 0, 5, 1);
+		var stepperMania:FlxUINumericStepper = new FlxUINumericStepper(100, 70, 1, 0, 0, 7, 1);
 		stepperMania.value = _song.mania;
 		stepperMania.name = 'mania';
 
@@ -484,6 +487,7 @@ class ChartingState extends MusicBeatState
 	var check_changeBPM:FlxUICheckBox;
 	var stepperSectionBPM:FlxUINumericStepper;
 	var check_altAnim:FlxUICheckBox;
+	var stepperDType:FlxUINumericStepper;
 
 	var sectionToCopy:Int = 0;
 
@@ -516,6 +520,10 @@ class ChartingState extends MusicBeatState
 			stepperSectionBPM.value = Conductor.bpm;
 		}
 		stepperSectionBPM.name = 'section_bpm';
+		
+		stepperDType = new FlxUINumericStepper(110, 230, 1, 0, 0, 9, 0);
+		stepperDType.value = 0;
+		stepperDType.name = 'quien canta';
 
 
 		var copyButton:FlxButton = new FlxButton(10, 150, "Copy Section", function()
@@ -578,6 +586,7 @@ class ChartingState extends MusicBeatState
 
 		tab_group_section.add(stepperLength);
 		tab_group_section.add(stepperSectionBPM);
+		tab_group_section.add(stepperDType);
 		tab_group_section.add(check_mustHitSection);
 		tab_group_section.add(check_altAnim);
 		tab_group_section.add(check_changeBPM);
@@ -861,6 +870,11 @@ class ChartingState extends MusicBeatState
 				_song.notes[curSection].bpm = nums.value;
 				updateGrid();
 			}
+			else if (wname == 'quien canta')
+				{
+					_song.notes[curSection].dType = Std.int(nums.value);
+					updateGrid();
+				}			
 			else if (wname == 'inst_volume')
 			{
 				FlxG.sound.music.volume = nums.value;
@@ -1449,6 +1463,7 @@ class ChartingState extends MusicBeatState
 		check_altAnim.checked = sec.altAnim;
 		check_changeBPM.checked = sec.changeBPM;
 		stepperSectionBPM.value = sec.bpm;
+		stepperDType.value = sec.dType;
 
 		updateHeads();
 	}
@@ -1654,7 +1669,8 @@ class ChartingState extends MusicBeatState
 			mustHitSection: true,
 			sectionNotes: [],
 			typeOfSection: 0,
-			altAnim: false
+			altAnim: false,
+			dType: 0
 		};
 
 		_song.notes.push(sec);
@@ -1848,7 +1864,8 @@ class ChartingState extends MusicBeatState
 				mustHitSection: false,
 				bpm: 0,
 				changeBPM: false,
-				altAnim: false
+				altAnim: false,
+				dType: 0
 			};
 			events.push(sex);
 		}

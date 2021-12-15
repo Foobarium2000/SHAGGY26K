@@ -89,7 +89,7 @@ class MainMenuState extends MusicBeatState
 
 		var star:Array<FlxSprite> = [];
 
-		for (i in 0...3)
+		for (i in 0...4)
 		{
 			var gfx = 'endstar';
 			if (!FlxG.save.data.ending[i]) gfx += '_e';
@@ -98,6 +98,7 @@ class MainMenuState extends MusicBeatState
 			star[i].scrollFactor.set();
 			star[i].screenCenter(X);
 			star[i].y = 0;
+			star[i].x -= 60;
 			star[i].x += (i - 1) * 90;
 			star[i].scale.x = 0.75;
 			star[i].scale.y = 0.75;
@@ -158,7 +159,7 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
-		var nowadded:FlxText = new FlxText(12, FlxG.height - 64, 0, "Now with 26 Keys!", 12);
+		var nowadded:FlxText = new FlxText(12, FlxG.height - 64, 0, "Now with more Keys!", 12);
 		nowadded.scrollFactor.set();
 		nowadded.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(nowadded);
@@ -275,7 +276,7 @@ class MainMenuState extends MusicBeatState
 									case 'story_mode':
 										MusicBeatState.switchState(new StoryMenuState());
 									case 'freeplay':
-										MusicBeatState.switchState(new FreeplayState());
+										MusicBeatState.switchState(new FreeplayChoice());
 									case 'awards':
 										MusicBeatState.switchState(new AchievementsMenuState());
 									case 'credits':

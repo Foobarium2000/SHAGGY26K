@@ -1,0 +1,14 @@
+matt:normal:-1:Hey.
+matt:normal:-1:I've come to this mansion to accept your#training.
+rsh:normal:1:Sure thing man!
+matt:normal:-1:So, how will we train?
+rsh:smug:1:I'll channel some power through a regular#song battle.
+rsh:normal:1:Won't feel any different from singing#normally as power cannalization has#no feeling.
+matt:normal:-1:...
+matt:down:-1:I just wanna beat that kid. will this#help me do that?
+rsh:ser:1:This will give you more control over #voice-direction correlation
+rsh:normal:1:I can sense that you've got great singing#speed already.
+rsh:smug:1:With this you'll be like, unstoppable!
+matt:normal:-1:Heh
+rsh:smug:1:But first, show me what you've got.
+matt:up:-1:Let's do this!

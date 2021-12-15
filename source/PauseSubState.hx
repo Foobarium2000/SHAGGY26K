@@ -66,7 +66,7 @@ class PauseSubState extends MusicBeatSubstate
 
 		var controls:FlxText = new FlxText(20, 15, 0, "Controls: ", 32);
 
-		var cj = [0, 12, 12, 19, 28, 41];
+		var cj = [0, 12, 12, 19, 28, 41, 41, 15];
 		var controlArray = ClientPrefs.lastControls.copy();
 		for (i in 0...Main.ammo[PlayState.mania])
 		{
@@ -77,22 +77,26 @@ class PauseSubState extends MusicBeatSubstate
 			if (i != Main.ammo[PlayState.mania] - 1) controls.text += '|';
 		}
 
-		if (ClientPrefs.bindQWERTY && PlayState.mania == 5)
+		if (PlayState.mania == 5)
 		{
-			controls.text = "Controls: QWERTY";
+			// switch controls text depending on what bind it is
+			if (ClientPrefs.bindQWERTY)
+				{
+					controls.text = "Controls: QWERTY";
+				}
+				else if (ClientPrefs.bindDVORAK)
+				{
+					controls.text = "Controls: DVORAK";
+				}
+				else if (ClientPrefs.bindAZERTY)
+				{
+					controls.text = "Controls: AZERTY";
+				}
+				else if (ClientPrefs.bindCOLEMAK)
+				{
+					controls.text = "Controls: COLEMAK";
+				}		
 		}
-		else if (ClientPrefs.bindDVORAK && PlayState.mania == 5)
-		{
-			controls.text = "Controls: DVORAK";
-		}
-		else if (ClientPrefs.bindAZERTY && PlayState.mania == 5)
-		{
-			controls.text = "Controls: AZERTY";
-		}
-		else if (ClientPrefs.bindCOLEMAK && PlayState.mania == 5)
-		{
-			controls.text = "Controls: COLEMAK";
-		}						
 
 		controls.scrollFactor.set();
 		controls.setFormat(Paths.font('vcr.ttf'), 32);
@@ -219,7 +223,28 @@ class PauseSubState extends MusicBeatSubstate
 					if(PlayState.isStoryMode) {
 						MusicBeatState.switchState(new StoryMenuState());
 					} else {
-						MusicBeatState.switchState(new FreeplayState());
+						// same thing from freeplay but now put into the pause menu
+						// check to see if song is either in normal fp or other fp
+						var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplayOtherSonglist'));
+						var initSonglist2 = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
+						var fulllength = initSonglist.length + initSonglist2.length;
+						for (i in 0...fulllength)
+						{
+							var songArray:Array<String> = initSonglist[i].split(":");
+							var songArray2:Array<String> = initSonglist2[i].split(":");
+							trace(songArray[0]);
+							trace(songArray2[0]);
+							if (songArray[0] == PlayState.SONG.song || songArray[0] == PlayState.SONG.song.toLowerCase())
+							{			
+								MusicBeatState.switchState(new FreeplayOtherState());
+								trace('OTHER FREEPLAY');
+							}
+							else if (songArray2[0] == PlayState.SONG.song || songArray2[0] == PlayState.SONG.song.toLowerCase())
+							{
+								MusicBeatState.switchState(new FreeplayState());
+								trace('SHAGGY FREEPLAY');
+							}
+						}
 					}
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					PlayState.usedPractice = false;
