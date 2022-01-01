@@ -398,7 +398,7 @@ class ChartingState extends MusicBeatState
 		stepperBPM.value = Conductor.bpm;
 		stepperBPM.name = 'song_bpm';
 
-		var stepperMania:FlxUINumericStepper = new FlxUINumericStepper(100, 70, 1, 0, 0, 7, 1);
+		var stepperMania:FlxUINumericStepper = new FlxUINumericStepper(100, 70, 1, 0, 0, 8, 1);
 		stepperMania.value = _song.mania;
 		stepperMania.name = 'mania';
 

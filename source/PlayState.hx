@@ -1698,9 +1698,9 @@ class PlayState extends MusicBeatState
 											{
 												MASKstate.endingUnlock(3);
 												achieve = new Alphabet(6, FlxG.height / 2 + 380, "DUET ENDING", true, false);
+												achieve.scrollFactor.set();
 												achieve.screenCenter();
-												achieve.x -= 270;
-												achieve.y += 220;
+												achieve.y += 70;
 												add(achieve);
 								
 												new FlxTimer().start(12, function(gback:FlxTimer)
@@ -2423,7 +2423,7 @@ class PlayState extends MusicBeatState
 						FlxTween.tween(babyArrow, {y: babyArrow.y + 10, alpha: 1}, 1, {ease: FlxEase.circOut, startDelay: 0.5 + (0.2 * i)});
 					case 4 | 6:
 						FlxTween.tween(babyArrow, {y: babyArrow.y + 10, alpha: 1}, 1, {ease: FlxEase.circOut, startDelay: 0.2 + (0.2 * i)});
-					case 5:
+					case 5 | 8:
 						FlxTween.tween(babyArrow, {y: babyArrow.y + 10, alpha: 1}, 1, {ease: FlxEase.circOut, startDelay: 0.04 + (0.13 * i)});
 				}
 			}
@@ -3507,7 +3507,7 @@ class PlayState extends MusicBeatState
 					daNote.y = (strumY + 0.45 * (Conductor.songPosition - daNote.strumTime) * roundedSpeed);
 					if (daNote.isSustainNote) {
 						//Jesus fuck this took me so much mother fucking time AAAAAAAAAA
-						if (daNote.animation.curAnim.name.endsWith('tail')) {
+						if (daNote.animation.curAnim.name.endsWith(' hold end')) {
 							daNote.y += 10.5 * (fakeCrochet / 400) * 1.5 * roundedSpeed + (46 * (roundedSpeed - 1));
 							daNote.y -= 46 * (1 - (fakeCrochet / 600)) * roundedSpeed;
 							if(curStage == 'school' || curStage == 'schoolEvil') {
@@ -3653,7 +3653,7 @@ class PlayState extends MusicBeatState
 										{
 											health -= 0.0310;
 										}
-										if (SONG.mania == 4 || SONG.mania == 6)
+										if (SONG.mania == 4 || SONG.mania == 6 || SONG.mania == 8)
 										{
 											health -= 0.0411;
 										} 
@@ -4411,7 +4411,7 @@ class PlayState extends MusicBeatState
 					health -= 0.3;
 				case 5:
 					health -= 0.152;
-				case 4 | 6:
+				case 4 | 6 | 8:
 					health -= 0.227;
 			}		
 		}
@@ -4656,6 +4656,18 @@ class PlayState extends MusicBeatState
 			controls.F25
 		];		
 
+		var lH = [
+			controls.C0,
+			controls.C1,
+			controls.C2,
+			controls.C3,
+			controls.C5,
+			controls.C7,
+			controls.C9,
+			controls.C10,
+			controls.C11,
+			controls.C12
+		];
 
 		var sP = [
 			controls.A1_P,
@@ -4735,6 +4747,19 @@ class PlayState extends MusicBeatState
 			controls.F23_P,
 			controls.F24_P,
 			controls.F25_P
+		];
+
+		var lP = [
+			controls.C0_P,
+			controls.C1_P,
+			controls.C2_P,
+			controls.C3_P,
+			controls.C5_P,
+			controls.C7_P,
+			controls.C9_P,
+			controls.C10_P,
+			controls.C11_P,
+			controls.C12_P
 		];
 
 		var sR = [
@@ -4874,6 +4899,19 @@ class PlayState extends MusicBeatState
 			controls.G15_R
 		];
 
+		var lR = [
+			controls.C0_R,
+			controls.C1_R,
+			controls.C2_R,
+			controls.C3_R,
+			controls.C5_R,
+			controls.C7_R,
+			controls.C9_R,
+			controls.C10_R,
+			controls.C11_R,
+			controls.C12_R
+		];
+
 		var upP = controls.NOTE_UP_P;
 		var rightP = controls.NOTE_RIGHT_P;
 		var downP = controls.NOTE_DOWN_P;
@@ -4918,6 +4956,10 @@ class PlayState extends MusicBeatState
 				controlArray = iP;
 				controlReleaseArray = iR;
 				controlHoldArray = iH;
+			case 8:
+				controlArray = lP;
+				controlReleaseArray = lR;
+				controlHoldArray = lH;
 		}
 
 		var anyH = false;
@@ -5138,6 +5180,18 @@ class PlayState extends MusicBeatState
 			controls.G15_P
 		];
 
+		var lP = [
+			controls.C0_P,
+			controls.C1_P,
+			controls.C2_P,
+			controls.C3_P,
+			controls.C5_P,
+			controls.C7_P,
+			controls.C9_P,
+			controls.C10_P,
+			controls.C11_P,
+			controls.C12_P
+		];
 
 		var controlArray:Array<Bool> = [controls.NOTE_LEFT_P, controls.NOTE_DOWN_P, controls.NOTE_UP_P, controls.NOTE_RIGHT_P];
 
@@ -5157,6 +5211,8 @@ class PlayState extends MusicBeatState
 				controlArray = gP;
 			case 7:
 				controlArray = iP;
+			case 8:
+				controlArray = lP;
 		}
 		for (i in 0...controlArray.length) {
 			if(controlArray[i]) {
@@ -5174,7 +5230,7 @@ class PlayState extends MusicBeatState
 			{
 				health -= 0.0235;
 			}
-			if (SONG.mania == 4 || SONG.mania == 6)
+			if (SONG.mania == 4 || SONG.mania == 6 || SONG.mania == 8)
 			{
 				health -= 0.352;
 			}
@@ -5280,7 +5336,7 @@ class PlayState extends MusicBeatState
 
 			if(cpuControlled) {
 				var time:Float = 0.15;
-				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end')) {
+				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('hold end')) {
 					time += 0.15;
 				}
 				StrumPlayAnim(false, Std.int(Math.abs(note.noteData)) % Main.ammo[mania], time);

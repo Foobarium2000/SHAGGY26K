@@ -50,7 +50,6 @@ class TSSave extends MusicBeatState
 	override function closeSubState() {
 		super.closeSubState();
 		ClientPrefs.saveSettings();
-		changeSelection();
 	}
 
 	override function update(elapsed:Float) {
@@ -309,26 +308,6 @@ class TSSave extends MusicBeatState
 		var bullShit:Int = 0;
 		for (i in 0...grpInputs.length) {
 			grpInputs[i].alpha = 0.6;
-		}
-	}
-	
-	function changeSelection(change:Int = 0) {
-		curSelected += change;
-		if (curSelected < 0)
-			curSelected = options.length - 1;
-		if (curSelected >= options.length)
-			curSelected = 0;
-
-		var bullShit:Int = 0;
-
-		for (item in grpOptions.members) {
-			item.targetY = bullShit - curSelected;
-			bullShit++;
-
-			item.alpha = 0.6;
-			if (item.targetY == 0) {
-				item.alpha = 1;
-			}
 		}
 	}
 

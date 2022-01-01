@@ -66,11 +66,15 @@ class PauseSubState extends MusicBeatSubstate
 
 		var controls:FlxText = new FlxText(20, 15, 0, "Controls: ", 32);
 
-		var cj = [0, 12, 12, 19, 28, 41, 41, 15];
+		var cj = [0, 12, 12, 19, 28, 41, 41, 15, 28];
 		var controlArray = ClientPrefs.lastControls.copy();
 		for (i in 0...Main.ammo[PlayState.mania])
 		{
 			if (PlayState.mania == 1 && i == 3) cj[1] ++;
+			
+			if (PlayState.mania == 8 && i == 4) cj[8] ++;
+			if (PlayState.mania == 8 && i == 5) cj[8] ++;
+			if (PlayState.mania == 8 && i == 6) cj[8] ++;
 
 			controls.text += InputFormatter.getKeyName(controlArray[(cj[PlayState.mania] + i) * 2]);
 

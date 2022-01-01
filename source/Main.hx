@@ -23,7 +23,7 @@ class Main extends Sprite
 	public static var menuBad:Bool = false;
 	public static var menuMusPlay:Bool = false;
 	public static var skipDes:Bool = false;
-	public static var ammo:Array<Int> = [4, 6, 7, 9, 13, 26, 16, 1];
+	public static var ammo:Array<Int> = [4, 6, 7, 9, 13, 26, 16, 1, 10];
 	public static var gfxIndex:Array<Dynamic> = [
 		[3, 4, 5, 6],
 		[3, 5, 6, 19, 20, 22],
@@ -32,7 +32,8 @@ class Main extends Sprite
 		[0, 3, 4, 5, 6, 7, 17, 18, 19, 20, 21, 22, 23],
 		[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
 		[2, 1, 3, 4, 5, 6, 7, 17, 15, 18, 19, 20, 21, 22, 23, 25],
-		[7]
+		[7],
+		[3, 4, 5, 6, 7, 18, 19, 20, 21, 22]
 	];
 	public static var gfxHud:Array<Dynamic> = [
 		[1, 2, 3, 4],
@@ -42,7 +43,8 @@ class Main extends Sprite
 		[0, 1, 2, 3, 4, 5, 6, 5, 1, 2, 3, 4, 7],
 		[0, 0, 0, 1, 2, 3, 4, 5, 6, 5, 9, 12, 8, 10, 11, 6, 5, 6, 5, 1, 2, 3, 4, 7, 7, 7],
 		[0, 0, 1, 2, 3, 4, 5, 6, 6, 5, 1, 2, 3, 4, 7, 7],
-		[5]
+		[5],
+		[1, 2, 3, 4, 5, 5, 1, 2, 3, 4]
 	];
 	public static var gfxCharDir:Array<Dynamic> = [
 		[0, 1, 2, 3],
@@ -52,7 +54,8 @@ class Main extends Sprite
 		[0, 0, 1, 2, 3, 2, 1, 2, 0, 1, 2, 3, 3],
 		[0, 0, 0, 0, 1, 2, 3, 2, 1, 2, 0, 1, 2, 2, 3, 3, 2, 3, 2, 0, 1, 2, 3, 3, 3, 3],
 		[0, 0, 0, 1, 2, 3, 2, 3, 3, 2, 0, 1, 2, 3, 3, 3],
-		[2]
+		[2],
+		[0, 1, 2, 3, 2, 2, 0, 1, 2, 3]
 	];
 	public static var gfxAlterInd:Array<Dynamic> = [
 		[2, 3, 3, 2],
@@ -60,7 +63,7 @@ class Main extends Sprite
 		[0, 1, 2, 3, 2, 1, 0],
 		[0, 1, 2, 1, 3, 1, 2, 1, 0]
 	];
-	public static var letterMax:Array<Int> = [26, 13, 16, 9, 4, 1];
+	public static var letterMax:Array<Int> = [26, 16, 13, 10, 9, 7, 6, 4, 1];
 	public static var skinName:Array<String> = ['assets', 'alter'];
 	public static var gfxDir:Array<String> = ['FOLDLEFT', 'LEFT', 'DOWN', 'UP', 'RIGHT', 'SPACE', 'STAR', 'FOLDRIGHT', 'PLAY', 'SQUARE', 'TRIANGLE', 'CROSS', 'CIRCLE'];
 	public static var charDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
